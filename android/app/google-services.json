@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "530651775436",
+    "project_id": "silcare-2dcd7",
+    "storage_bucket": "silcare-2dcd7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530651775436:android:4d899540407b6824021d69",
+        "android_client_info": {
+          "package_name": "com.silcare.mobile"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhr_vRUlfdPpHUQDWRe3utE9mddLHtmLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

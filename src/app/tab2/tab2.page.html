@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Info
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Info</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content color="light">
+    <!-- <ion-card>
+      <ion-card-header>
+        <ion-card-title>Keripik Singkong</ion-card-title>
+        <ion-card-subtitle>Mencari Kurir</ion-card-subtitle>
+        <ion-thumbnail slot="end">
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
+        </ion-thumbnail>
+      </ion-card-header>
+    
+      <ion-card-content>
+       
+        Here's a small text description for the card content. Nothing more, nothing less.
+      </ion-card-content>
+    </ion-card> -->
+    <ion-list [inset]="true">
+      <ion-item [button]="true" detail="false"  *ngFor="let item of proses">
+        <div class="unread-indicator-wrapper" slot="start">
+          <div class="unread-indicator"></div>
+        </div>
+        <ion-label>
+          <strong>{{item.name}}</strong>
+          <div *ngIf="item.status == 'ordered'">
+          <ion-text>sedang menunggu konfirmasi UMKM</ion-text>
+          <br />
+          <ion-note color="medium" class="ion-text-wrap">
+            Pesanan akan dikirim setelah UMKM melakukan konfirmasi
+          </ion-note>
+        </div>
+        </ion-label>
+        <div class="metadata-end-wrapper" slot="end">
+          <ion-note color="medium">06:11</ion-note>
+          <ion-icon color="medium" name="chevron-forward"></ion-icon>
+        </div>
+      </ion-item>
+    
+    </ion-list>
+  </ion-content>
+
+ 
+</ion-content>

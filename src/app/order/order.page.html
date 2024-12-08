@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-thumbnail class="menu">
+        <ion-back-button mode="md" defaultHref="/tabs"></ion-back-button>
+      </ion-thumbnail>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen="true" color="light">
+  <div class="cart-items" >
+<ion-list [inset]="true">
+    <ion-item [button]="true" detail="false" *ngFor="let item of product" [routerLink]="['/order-info', item.id]">
+      <ion-avatar aria-hidden="true" slot="start">
+        <img alt="" [src]="item.photo"/>
+      </ion-avatar>
+      <ion-label>
+        <strong>{{item.name}}</strong>
+        <ion-text>{{'biaya ongkir : Rp.' + item.shipping + ', harga : Rp.'+ item.qty * item.price + ', total : Rp.' + (item.qty * item.price + item.shipping)}}</ion-text><br />
+        <ion-note color="medium" class="ion-text-wrap">
+          
+          <ion-chip>
+            <ion-icon name="person-outline" color="primary"></ion-icon>
+            <ion-label>{{item.buyer.name}}</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-icon name="albums-outline" color="primary"></ion-icon>
+            <ion-label>{{item.category}}</ion-label>
+          </ion-chip>
+          <ion-chip>
+            <ion-icon name="download-outline" color="primary"></ion-icon>
+            <ion-label>{{item.status}}</ion-label>
+          </ion-chip>
+        </ion-note>
+      </ion-label>
+      <div class="metadata-end-wrapper" slot="end">
+        <ion-note color="medium">06:11</ion-note>
+        <ion-icon color="medium" name="chevron-forward"></ion-icon>
+      </div>
+    </ion-item>
+  </ion-list>
+  
+    
+    <!-- <ion-card mode="ios" button [routerLink]="['/order-info', item.id]">
+      <ion-card-content>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img [src]="item.photo">
+          </ion-thumbnail>
+          <ion-label class="company">
+            <p>{{item.name}}</p>
+            <p>{{item.price}}</p>
+            <p>
+              <ion-text color="medium">
+                Batam
+              </ion-text>
+            </p>
+          </ion-label>
+          <ion-text slot="end">
+            <div class="qty-selector">
+              <ion-button fill="clear">-</ion-button>
+              <ion-label>{{item.qty}}</ion-label>
+              <ion-button fill="clear">+</ion-button>
+            </div>
+            <div *ngIf="item.status == 'ordered'">
+              <ion-button  class="main-button" (click)="courier(item.id)" >Cari kurir</ion-button>
+            </div>
+            <div *ngIf="item.status == 'finding_courier'">
+              <ion-button disabled  class="main-button" fill="outline" (click)="courier(item.id)" >Mencari Kurir</ion-button>
+            </div>
+            <div *ngIf="item.status == 'courier_taking'">
+              <ion-button disabled  class="main-button" fill="outline" (click)="courier(item.id)" >Kurir menerima</ion-button>
+            </div>
+            
+
+          </ion-text>
+        </ion-item>
+       
+      </ion-card-content>
+    </ion-card> -->
+
+    
+
+  </div>
+</ion-content>
+<!-- <ion-footer translucent="true" class="ion-no-border" mode="md">
+  <ion-toolbar color="translucent">
+    <ion-button expand="block" class="main-button" routerLink="/checkout" routerDirection="forward">Checkout</ion-button>
+  </ion-toolbar>
+</ion-footer> -->

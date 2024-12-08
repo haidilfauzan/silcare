@@ -1,0 +1,47 @@
+ion-card {
+    background-color: #ffffff; // Latar belakang putih
+    border-radius: 15px; // Pembulatan sudut
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); // Bayangan yang lebih dalam
+    transition: transform 0.3s, box-shadow 0.3s; // Transisi untuk efek hover
+  
+    &:hover {
+      transform: translateY(-5px); // Efek mengangkat saat hover
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); // Bayangan lebih dalam saat hover
+    }
+  
+    ion-card-header {
+      padding: 16px; // Padding dalam header
+    }
+  
+    ion-card-title {
+      font-size: 1.6rem; // Ukuran font judul
+      font-weight: bold; // Teks tebal
+      color: #007bff; // Warna font judul biru
+      display: flex; // Flexbox untuk menempatkan ikon dan teks
+      align-items: center; // Vertikal align
+    }
+  
+    ion-icon {
+      margin-right: 10px; // Jarak antara ikon dan teks
+      color: #007bff; // Warna ikon biru
+      font-size: 1.5rem; // Ukuran ikon
+    }
+  
+    ion-card-content {
+      padding: 16px; // Padding dalam konten
+      font-size: 1.1rem; // Ukuran font konten
+      color: #333; // Warna teks konten
+      line-height: 1.5; // Jarak antar baris
+    }
+  
+    ion-button {
+      margin-top: 16px; // Jarak atas tombol
+      background: #28a745; // Warna latar belakang tombol hijau
+      color: white; // Warna teks tombol
+      border-radius: 5px; // Pembulatan sudut tombol
+      transition: background-color 0.3s; // Transisi untuk efek hover tombol
+  
+      &:hover {
+        background: #218838; // Warna saat hover
+      }
+    }}

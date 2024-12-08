@@ -1,0 +1,26 @@
+
+<ion-content [fullscreen]="true">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-thumbnail class="menu">
+          <ion-back-button mode="md" defaultHref="/tabs"></ion-back-button>
+        </ion-thumbnail>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<ion-card>
+
+<ion-item class="form" lines="none">
+    <ion-textarea row="4" label="Alamat" labelPlacement="stacked" placeholder="Enter text" [(ngModel)]="alamat.detail"></ion-textarea>
+</ion-item>
+
+<ion-item>
+  <ion-select aria-label="Fruit" interface="popover" placeholder="Kecamatan" [(ngModel)]="alamat.kecamatan">
+    <ion-select-option *ngFor="let k of kecamatanKeys" [value]="k">{{ k }}</ion-select-option>
+  </ion-select>
+</ion-item>
+ <ion-button expand="block" [disabled]="!alamat.detail || !alamat.kecamatan" (click)="simpan()" >Tambah</ion-button>
+</ion-card>
+</ion-content>

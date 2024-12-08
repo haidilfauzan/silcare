@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Verify Email</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">varify-email</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+        Verifikasi Email
+      </ion-card-title>
+      <ion-card-subtitle>Silakan verifikasi alamat email Anda</ion-card-subtitle>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <p>
+        Kami telah mengirimkan email verifikasi ke alamat email yang Anda daftarkan.
+        Mohon periksa kotak masuk Anda dan ikuti tautan yang diberikan untuk menyelesaikan proses registrasi.
+      </p>
+      <p>
+        Jika Anda tidak menerima email dalam beberapa menit, silakan periksa folder spam atau klik tombol di bawah.
+      </p>
+      <ion-button expand="full" color="primary" (click)="resendVerificationEmail()">
+        Tidak menerima email
+      </ion-button>
+      <ion-button fill="clear" expand="block"  routerLink="/login">Login</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

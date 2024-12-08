@@ -1,0 +1,83 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Kategori
+    </ion-title>
+
+    <ion-buttons slot="secondary">
+      <ion-button href="/cart">
+        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-searchbar></ion-searchbar>
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let item for menu" size="3">
+        <ion-card button class="ion-no-margin ion-text-center io-padding-vertical">
+          <ion-icon size="large" color="primary" [name]="item.icon"></ion-icon>
+          <div>{{item.label}}</div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+ <ion-list>
+    <ion-item>
+      <ion-select aria-label="Fruit" interface="popover" placeholder="Urutan">
+        <ion-select-option value="terpopuler">Terpopuler</ion-select-option>
+        <ion-select-option value="termurah">Termurah</ion-select-option>
+        <ion-select-option value="termahal">Termahal</ion-select-option>
+        <ion-select-option value="promo">Promo</ion-select-option>
+
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let item of product">
+        <ion-card button [routerLink]="['/detail-product', item.id]">
+          <img alt="Silhouette of mountains" [src]="item.photo" />
+          <ion-card-header>
+            <ion-card-title>{{item.name}}</ion-card-title>
+            <ion-card-subtitle>{{item.price}}</ion-card-subtitle>
+          </ion-card-header>
+        
+          <ion-card-content>
+            <ion-badge color="tertiary"> {{item.category}}</ion-badge>
+           
+          </ion-card-content>
+        </ion-card>
+        <!-- <ion-card button [routerLink]="item.link">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <ion-card-header>
+          <ion-card-title>{{item.label}}</ion-card-title>
+          <ion-card-subtitle>{{item.price}}</ion-card-subtitle>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{item.des}}
+        </ion-card-content>
+      </ion-card> -->
+    </ion-col>
+     
+    </ion-row>
+
+  </ion-grid>
+
+  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+</ion-content>

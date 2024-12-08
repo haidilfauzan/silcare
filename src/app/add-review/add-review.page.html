@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-thumbnail class="menu">
+        <ion-back-button mode="md" defaultHref="/tabs"></ion-back-button>
+      </ion-thumbnail>
+    </ion-buttons>
+    <ion-title>review</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">add-review</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- <ion-card mode="ios">
+    <ion-card-content>
+<ion-list>
+
+  <ion-item>
+    <ion-checkbox class="star" [checked]="satu" disabled="true" ></ion-checkbox>
+    <ion-checkbox class="star" [checked]="dua" disabled="true" ></ion-checkbox>
+    <ion-checkbox class="star" [checked]="tiga" disabled="true" ></ion-checkbox>
+    <ion-checkbox class="star"[checked]="empat" disabled="true" ></ion-checkbox>
+    <ion-checkbox class="star" [checked]="lima" disabled="true" ></ion-checkbox>
+  </ion-item>
+  </ion-list>
+  </ion-card-content>
+  </ion-card> -->
+
+  <ion-card>
+    <ion-item>
+      <ion-select aria-label="Fruit" interface="popover" placeholder="Kulitas" [(ngModel)]="review.Kulitas">
+        <ion-select-option  value="sangat buruk">sangat buruk</ion-select-option>
+        <ion-select-option  value="buruk">buruk</ion-select-option>
+        <ion-select-option  value="biasa">biasa</ion-select-option>
+        <ion-select-option  value="baik">baik</ion-select-option>
+        <ion-select-option  value="sangat baik">sangat baik</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="form" lines="none">
+        <ion-textarea row="4" label="detail" labelPlacement="stacked" placeholder="Enter text" [(ngModel)]="review.detail"></ion-textarea>
+    </ion-item>
+    
+     <ion-button expand="block" [disabled]="!review.detail || !review.Kulitas" (click)="simpan()" >Tambah</ion-button>
+    </ion-card>
+</ion-content>

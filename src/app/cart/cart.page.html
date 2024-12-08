@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-thumbnail class="menu">
+        <ion-back-button mode="md" defaultHref="/tabs"></ion-back-button>
+      </ion-thumbnail>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen="true">
+  <div class="cart-items" *ngFor="let item of product">
+    <ion-card mode="ios" button [routerLink]="['/detail-product', item.product]">
+      <ion-card-content>
+        <div class="item-img">
+          <img [src]="item.photo" />
+        </div>
+
+        <div class="item-info">
+          <p>{{item.name}}</p>
+          <p>{{item.price}}</p>
+        
+
+          <div class="qty-selector">
+            <ion-button fill="clear">-</ion-button>
+            <ion-label>{{item.qty}}</ion-label>
+            <ion-button fill="clear">+</ion-button>
+          </div>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>
+<ion-footer translucent="true" class="ion-no-border" mode="md">
+  <ion-toolbar color="translucent">
+    <ion-button expand="block" class="main-button" routerLink="/checkout" routerDirection="forward">Checkout</ion-button>
+  </ion-toolbar>
+</ion-footer>

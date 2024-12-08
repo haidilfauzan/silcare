@@ -1,0 +1,54 @@
+
+<ion-content [fullscreen]="true">
+
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-thumbnail class="menu">
+            <ion-back-button mode="md" defaultHref="/tabs"></ion-back-button>
+          </ion-thumbnail>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+  <ion-card>
+    <ion-item class="form" lines="none">
+      <ion-input required label="Foto" labelPlacement="stacked" row="2" type="file" placeholder="Foto" (change)="onFileSelected($event)"></ion-input>
+      <div *ngIf="downloadURL">
+        <img [src]="downloadURL" width="300" />
+        <!-- <ion-input type="text" placeholder="Nama" [(ngModel)]="myproduct.photo">{{downloadURL}}</ion-input> -->
+      </div>
+    </ion-item>
+   <ion-item class="form" lines="none">
+     <ion-icon slot="start" name="basket-outline"></ion-icon>
+     <ion-input type="text" placeholder="Nama" [(ngModel)]="myproduct.name" required></ion-input>
+   </ion-item>
+   <ion-item class="form" lines="none">
+    <ion-icon slot="start" name="cash-outline"></ion-icon>
+    <ion-input type="number" placeholder="Price"  [(ngModel)]="myproduct.price" required></ion-input>
+  </ion-item>
+   <ion-item class="form" lines="none">
+    <ion-icon slot="start" name="cart-outline"></ion-icon>
+    <ion-input type="number" placeholder="Stock" [(ngModel)]="myproduct.stock" required></ion-input>
+  </ion-item>
+
+  
+  <!-- <ion-item>
+    <ion-icon slot="start" name="storefront-outline"></ion-icon>
+    <ion-input  value="{{umkmname().name}}" [readonly]="true"></ion-input>
+  </ion-item> -->
+  <ion-item class="form" lines="none">
+      <ion-textarea row="4" label="Description" labelPlacement="stacked" placeholder="Enter text" [(ngModel)]="myproduct.description" required></ion-textarea>
+  </ion-item>
+   <ion-list>
+    <ion-item>
+      <ion-select aria-label="category" interface="popover" placeholder="Jenis"  [(ngModel)]="myproduct.category" required>
+        <ion-select-option value="makanan">Makanan</ion-select-option>
+        <ion-select-option value="pakaian">Pakaian</ion-select-option>
+        <ion-select-option value="elektronik">Elektronik</ion-select-option>
+        <ion-select-option value="peralatan">peralatan</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+   <ion-button expand="block"  [disabled]="!myproduct.category || !myproduct.description || !myproduct.stock || !myproduct.name || !myproduct.price || !downloadURL" (click)="simpan()" >Tambah</ion-button>
+  </ion-card>
+ </ion-content>

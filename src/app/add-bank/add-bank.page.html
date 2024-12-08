@@ -1,0 +1,27 @@
+
+<ion-content [fullscreen]="true">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-thumbnail class="menu">
+          <ion-back-button mode="md" defaultHref="/tabs"></ion-back-button>
+        </ion-thumbnail>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<ion-card>
+ <ion-item class="form" lines="none">
+   <ion-icon slot="start" name="basket-outline"></ion-icon>
+   <ion-input type="text" placeholder="Nama bank" [(ngModel)]="bank.name"></ion-input>
+ </ion-item>
+ <ion-item class="form" lines="none">
+  <ion-icon slot="start" name="basket-outline"></ion-icon>
+  <ion-input type="text" placeholder="Nomor Rekening" [(ngModel)]="bank.number"></ion-input>
+</ion-item>
+<!-- <ion-item class="form" lines="none">
+    <ion-textarea row="4" label="Description" labelPlacement="stacked" placeholder="Enter text" [(ngModel)]="bank.number"></ion-textarea>
+</ion-item> -->
+ <ion-button [disabled]="!bank.name || !bank.number" expand="block"  (click)="simpan()" >Tambah</ion-button>
+</ion-card>
+</ion-content>

@@ -1,0 +1,114 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>setting</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">setting</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card-content>
+    <ion-list>
+      <div *ngIf="app.userlogin.role == 'admin'">
+        <ion-item *ngIf="app.userlogin.umkm" >
+          <ion-icon aria-hidden="true" name="briefcase" slot="start"></ion-icon>
+          <ion-label>UMKM</ion-label>
+          <div> 
+            <ion-button expand="block"  id="present-alert" >Update</ion-button>
+          <ion-alert
+          trigger="present-alert"
+          header="perbarui UMKM"
+          [buttons]="umkmButtons"
+          [inputs]="umkmInputs"
+        ></ion-alert>
+        
+          </div>
+        </ion-item>
+        <!-- <ion-item >
+          <ion-button expand="block"routerLink="/add-umkm">UMKM</ion-button>
+        </ion-item> -->
+        <ion-item *ngIf="app.userlogin.bank" >
+          <ion-icon aria-hidden="true" name="briefcase" slot="start"></ion-icon>
+          <ion-label>Bank</ion-label>
+          <div> 
+            <ion-button expand="block"  id="present-bank" >Update</ion-button>
+          <ion-alert
+          trigger="present-bank"
+          header="perbarui Bank"
+          [buttons]="bankButtons"
+          [inputs]="bankInputs"
+        ></ion-alert>
+        
+          </div>
+        </ion-item>
+      </div>
+      <ion-item *ngIf="app.userlogin.bank" >
+        <ion-icon aria-hidden="true" name="briefcase" slot="start"></ion-icon>
+        <ion-label>Reset Password</ion-label>
+        <div> 
+          <ion-button expand="block"  id="present-bank" (click)="send()">Update</ion-button>
+      
+        </div>
+      </ion-item>
+
+      <ion-item *ngIf="app.userlogin.email" >
+        <ion-icon aria-hidden="true" name="briefcase" slot="start"></ion-icon>
+        <ion-label>Email</ion-label>
+        <div> 
+          <ion-button expand="block"  id="present-email" >Update</ion-button>
+        <ion-alert
+        trigger="present-email"
+        header="perbarui email"
+        [buttons]="emailButtons"
+        [inputs]="emailInputs"
+      ></ion-alert>
+      
+        </div>
+      </ion-item>
+        <!-- <ion-item *ngIf="app.userlogin.address" >
+          <ion-icon aria-hidden="true" name="location" slot="start"></ion-icon>
+          <ion-label>Alamat</ion-label>
+          <div> 
+            <ion-button expand="block"  id="present-alert" >Update</ion-button>
+      
+          </div>
+        </ion-item>
+        
+      <ion-item>
+        <ion-icon aria-hidden="true" name="mail" slot="start"></ion-icon>
+        <ion-label>Email</ion-label>
+        <div> 
+          <ion-button expand="block"  id="present-alert" >Update</ion-button>
+
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-icon aria-hidden="true" name="call" slot="start"></ion-icon>
+        <ion-label>Phone</ion-label>
+        <div> 
+          <ion-button expand="block"  id="present-alert" >Update</ion-button>
+        
+      
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-icon aria-hidden="true" name="call" slot="start"></ion-icon>
+        <ion-label>Password</ion-label>
+        <div> 
+          <ion-button expand="block"  id="present-alert" >Update</ion-button>
+       
+      
+        </div>
+      </ion-item> -->
+      <!-- <ion-item>
+        <ion-icon aria-hidden="true" name="person" slot="start"></ion-icon>
+        <ion-input value="Male"></ion-input>
+      </ion-item> -->
+    </ion-list>
+  </ion-card-content>
+
+</ion-content>

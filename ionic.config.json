@@ -1,0 +1,7 @@
+{
+  "name": "silcare",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

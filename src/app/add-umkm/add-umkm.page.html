@@ -1,0 +1,29 @@
+
+<ion-content [fullscreen]="true">
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-thumbnail class="menu">
+          <ion-back-button mode="md" defaultHref="/tabs"></ion-back-button>
+        </ion-thumbnail>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+<ion-card>
+  <ion-item class="form" lines="none">
+    <ion-input label="Logo" labelPlacement="stacked" row="2" type="file" placeholder="Foto" (change)="onFileSelected($event)"></ion-input>
+    <div *ngIf="downloadURL">
+      <img [src]="downloadURL" width="300" />
+    </div>
+  </ion-item>
+ <ion-item class="form" lines="none">
+   <ion-icon slot="start" name="basket-outline"></ion-icon>
+   <ion-input type="text" placeholder="Nama" [(ngModel)]="umkm.name"></ion-input>
+ </ion-item>
+<ion-item class="form" lines="none">
+    <ion-textarea row="4" label="Description" labelPlacement="stacked" placeholder="Enter text" [(ngModel)]="umkm.description"></ion-textarea>
+</ion-item>
+ <ion-button expand="block" [disabled]="!umkm.name || !umkm.description || !downloadURL"  (click)="simpan()" >Tambah</ion-button>
+</ion-card>
+</ion-content>

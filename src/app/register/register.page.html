@@ -1,0 +1,33 @@
+
+<ion-content [fullscreen]="true">
+  <div class="logo"></div>
+  <ion-card>
+   <ion-item class="form" lines="none">
+     <ion-icon slot="start" name="person"></ion-icon>
+     <ion-input type="text" placeholder="Nama" [(ngModel)]="user.name"></ion-input>
+   </ion-item>
+   <ion-item class="form" lines="none">
+    <ion-icon slot="start" name="call"></ion-icon>
+    <ion-input type="tel" placeholder="Phone" [(ngModel)]="user.phone" ></ion-input>
+  </ion-item>
+   <ion-item class="form" lines="none">
+    <ion-icon slot="start" name="mail"></ion-icon>
+    <ion-input type="email" placeholder="Email" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+   <ion-item class="form" lines="none">
+     <ion-icon slot="start" name="key"></ion-icon>
+     <ion-input type="password" placeholder="Kata sandi" [(ngModel)]="user.password" ></ion-input>
+   </ion-item>
+   <ion-list>
+    <ion-item>
+      <ion-select aria-label="Fruit" interface="popover" placeholder="User" [(ngModel)]="user.role">
+        <ion-select-option value="user">Buyer</ion-select-option>
+        <ion-select-option value="admin">Umkm</ion-select-option>
+        <ion-select-option value="courier">Kurir</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+   <ion-button expand="block" [disabled]="!user.email || !user.password || !user.name || !user.phone || !user.role" (click)="createuser()" >daftar</ion-button>
+   <ion-button fill="clear" expand="block"  routerLink="/login">sudah punya akun</ion-button>
+  </ion-card>
+ </ion-content>
