@@ -1,8 +1,8 @@
 {
   "enabled": false,
-"msg":{
-"title":App Maintenance",
-"msg": "aplikasi dalam perbaikan",
-"btn" : "OK"
-}
+  "msg": {
+    "title": "App Maintenance",
+    "msg": "The application is under maintenance.",
+    "btn": "OK"
+  }
 }
