@@ -26,7 +26,22 @@ export class DetailProductPage implements OnInit {
   segment_value = 'description';
   bookmark = false;
   
-  
+  getStarCount(kulitas: string): number {
+    switch (kulitas.toLowerCase()) {
+      case 'sangat baik':
+        return 5;
+      case 'baik':
+        return 4;
+      case 'biasa':
+        return 3;
+      case 'buruk':
+        return 2;
+      case 'sangat buruk':
+        return 1;
+      default:
+        return 0; // Default to 0 stars if unknown value
+    }
+  }
 
   toggleBookmark() {
     // console.log(this.cart.qty)

@@ -33,6 +33,10 @@ export class Tab3Page {
     
   }
 
+  editProfilePicture(){
+    
+  }
+
 
   menu: any[] = [
     {label:'Produk', icon: 'bag-add-outline', link: '/my-product'},

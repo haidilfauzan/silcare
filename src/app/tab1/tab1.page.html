@@ -3,17 +3,6 @@
     <ion-title>
       Branda
     </ion-title>
-
-    <!-- <ion-buttons slot="secondary">
-      <ion-button href="/cart">
-        <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
-      </ion-button>
-    </ion-buttons> -->
-    <!-- <ion-buttons slot="primary">
-      <ion-button>
-        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-      </ion-button>
-    </ion-buttons> -->
   </ion-toolbar>
 </ion-header>
 
@@ -23,50 +12,39 @@
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-searchbar></ion-searchbar>
+  
+  <!-- Search bar to filter products -->
+  <ion-searchbar [(ngModel)]="searchTerm" debounce="500" (ionInput)="filterProducts()" placeholder="Search products"></ion-searchbar>
 
-  <!-- <ion-grid>
-    <ion-row>
-      <ion-col *ngFor="let item for menu" size="3">
-        <ion-card button class="ion-no-margin ion-text-center io-padding-vertical">
-          <ion-icon size="large" color="primary" [name]="item.icon"></ion-icon>
-          <div>{{item.label}}</div>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid> -->
   <ion-grid>
     <ion-row>
       <ion-col size="3" *ngFor="let item of menu">
         <ion-card button class="ion-no-margin ion-text-center ion-padding-vertical" [routerLink]="item.link">
-
-          <ion-icon size="large" aria-hidden="true" [name]='item.icon'></ion-icon>
-        
+          <ion-icon size="large" aria-hidden="true" [name]="item.icon"></ion-icon>
           <div class="menu-label">{{item.label}}</div>
-
-      </ion-card>
-    </ion-col>
-     
+        </ion-card>
+      </ion-col>
     </ion-row>
-
   </ion-grid>
- <ion-list>
-    <ion-item>
-      <ion-select aria-label="Fruit" interface="popover" placeholder="Urutan">
-        <ion-select-option value="terpopuler">Terpopuler</ion-select-option>
-        <ion-select-option value="termurah">Termurah</ion-select-option>
-        <ion-select-option value="termahal">Termahal</ion-select-option>
-        <ion-select-option value="promo">Promo</ion-select-option>
 
+  <!-- Sorting dropdown -->
+  <ion-list>
+    <ion-item>
+      <ion-select aria-label="Sort" interface="popover" placeholder="Sort by">
+        <ion-select-option value="terpopuler">Most Popular</ion-select-option>
+        <ion-select-option value="termurah">Cheapest</ion-select-option>
+        <ion-select-option value="termahal">Most Expensive</ion-select-option>
+        <ion-select-option value="promo">Promo</ion-select-option>
       </ion-select>
     </ion-item>
   </ion-list>
   
+  <!-- Display filtered products -->
   <ion-grid>
     <ion-row>
-      <ion-col size="6" *ngFor="let item of product">
+      <ion-col size="6" *ngFor="let item of filteredProducts">
         <ion-card button [routerLink]="['/detail-product', item.id]">
-          <img alt="Silhouette of mountains" [src]="item.photo" />
+          <img alt="Product image" [src]="item.photo" />
           <ion-card-header>
             <ion-card-title>{{item.name}}</ion-card-title>
             <ion-card-subtitle>{{item.price}}</ion-card-subtitle>
@@ -74,25 +52,9 @@
         
           <ion-card-content>
             <ion-badge color="tertiary"> {{item.category}}</ion-badge>
-           
           </ion-card-content>
         </ion-card>
-        <!-- <ion-card button [routerLink]="item.link">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
-        <ion-card-header>
-          <ion-card-title>{{item.label}}</ion-card-title>
-          <ion-card-subtitle>{{item.price}}</ion-card-subtitle>
-        </ion-card-header>
-      
-        <ion-card-content>
-          {{item.des}}
-        </ion-card-content>
-      </ion-card> -->
-    </ion-col>
-     
+      </ion-col>
     </ion-row>
-
   </ion-grid>
-
-  <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
 </ion-content>
