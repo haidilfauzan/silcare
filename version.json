@@ -1,0 +1,14 @@
+{
+  "current": "1.0.0",
+  "enabled": true,
+  "majorMsg": {
+    "title": "Important App Update",
+    "msg": "Silcare telah update segera update aplikasi mu sekarang",
+    "btn": "Download"
+  },
+  "minorMsg": {
+    "title": "App Update Available",
+    "msg": "Silcare memiliki update terbaru",
+    "btn": "Download"
+  }
+}
